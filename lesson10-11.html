@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Обработка событий](lesson10-11) </title>
+    <link rel="stylesheet" href="css/lesson10.css">
+</head>
+<body>
+
+<div class="title">1. Необходимо изменить функцию openDescription из lesson10.js так, чтобы при нажатии на 'p' связанная с ним информация открывалась, 
+а информация, связанная с остальными 'p' скрывалась. Повторное нажатие на 'p' приводит к скрытию связанной с ним информации.</div>
+<section class="first">
+
+    <div class="article">
+        <p>Короткий текст 1</p>
+        <p>
+            Длинный текст Длинный текст
+            Длинный текст Длинный текст
+            Длинный текст Длинный текст
+        </p>
+    </div>
+
+    <div class="article">
+        <p>Короткий текст 2</p>
+        <p>
+            Длинный текст Длинный текст
+            Длинный текст Длинный текст
+            Длинный текст Длинный текст
+        </p>
+    </div>
+
+    <div class="article">
+        <p>Короткий текст 3</p>
+        <p>
+            Длинный текст Длинный текст
+            Длинный текст Длинный текст
+            Длинный текст Длинный текст
+        </p>
+    </div>
+
+</section>
+<div class="title">
+    2. Задача на генерацию игрового поля (часть 2): 
+
+        Пользователю дается определенное количество попыток, чтобы найти приз, 
+        если ему удается найти спрятанный приз за указанное количество попыток, 
+        то отобразить пользователю его приз, если не удалось, то вывести информацию об этом.
+        
+        После каждой попытки отображать, сколько попыток осталось.
+        Если пользователь получил приз или закончились попытки, он не может продолжить игру (удалить обработчик события).
+</div>
+<section class="second">
+    <div id="game-field"></div>
+</section>
+
+<div class="title">3. Задача на генерацию таблицы (часть 2):    
+при нажатии на заголовок ячейки должна происходить сортировка по соответствующему столбцу</div>
+<section class="three">
+</section>
+
+<section>
+    <div class="title">
+        4. Дан чекбокс и текстовый инпут (см. файл form-events.js). Если флажок на чекбоксе установлен, 
+то поле доступно для редактирования, если снят, то то поле нельзя редиктировать.
+     </div>   
+    <div>
+        <label><input type="checkbox">Отметьте, если хотите указать дополнительную информацию</label><br>
+         <input type="text" disabled>
+    </div>
+</section>
+<section class="five">
+    <div class="article_comment">
+        <h3>Заголовок статьи</h3>
+        <span class="author">author</span>    
+        <p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Ullam vel, provident. Esse quisquam, placeat, officiis animi illum pariatur rerum ut! Illum amet voluptate dignissimos hic deleniti accusamus cum praesentium eveniet odit quo, maiores inventore fuga officiis error dolorem id repellat voluptatum impedit assumenda, quia, dolore doloremque tenetur, modi. Temporibus maxime molestias eius veniam nostrum facere deserunt quibusdam, ipsam illum. Minus culpa eos nobis accusantium unde, aperiam. Similique nulla reprehenderit modi. Nesciunt, corporis beatae saepe, voluptatum enim neque maxime reiciendis. Cum blanditiis ipsum saepe nesciunt. Qui possimus, id inventore nemo perferendis velit excepturi, placeat, illo voluptas saepe quod ut alias libero, sint necessitatibus nam quo repellat at ipsam eaque aliquid minima neque. Dolore eius iste tempore alias dolorum unde molestiae ea rem? Praesentium iure, culpa corporis maxime, hic architecto impedit quidem sint omnis saepe quasi cum odit libero earum ab. Enim odit ut, voluptatum obcaecati itaque sapiente aliquam adipisci quas hic nobis vero.</p>
+        <div id="comments"></div>   
+    </div>
+
+    <form id="form" action="#" method="post">
+        <label for=author>Login</label>
+        <input name="author" type="text">
+        <label for=comment>Text comment</label>
+        <input name="comment" type="textarea">
+        <input type="submit" value="Оставить коментарий">
+     </form>
+
+</section> 
+<div class="title">
+    Задача на вывод книг:
+
+        let books = [
+            { author: 'Пушкин', title: 'Пир во время чумы', pageCount: 5, count: 10},
+            { author: 'Гоголь', title: 'Мертвые души', pageCount: 470, count: 0},
+            { author: 'Лермонтов', title: 'Тамань', pageCount: 190, count: 6},
+            { author: 'Гончаров', title: 'Обломов', pageCount: 610, count: 2},
+            { author: 'Лермонтов', title: 'Герой Нашего Времени', pageCount: 191, count: 17},
+            { author: 'Пушкин', title: 'Руслан и Людмила', pageCount: 50, count: 0},
+            { author: 'Лермонтов', title: 'Бородино', pageCount: 2, count: 5},
+        ];
+        
+        Вывести информацию о товаре: название, автор, количество страниц и поле вида + 0 -, 
+        где 0 изначальное количество.
+        Нажате на + приводит к увеличению изначального количества (но не больше значения свойства count),
+        нажате на - приводит к уменьшению количества (но не меньше 0).
+        Если значение свойства count равно 0, кнопки + и - должны быть неактивны.
+        Реализовать возможность вводить желаемое количество с клавиаруты, при этом:
+            числа превышающие значение свойства count, заменяются  значением свойства count,
+            отрицательные числа заменяются 0.
+</div>
+<section class="six">
+    
+</section>   
+<script src="js/lesson10.js"></script>
+</body>
+</html>
