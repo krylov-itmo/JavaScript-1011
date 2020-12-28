@@ -11,8 +11,6 @@ function openDescription() {
     }
 }
 
-
-
 let playobj = {
                 cat: "Кот",
                 book: "Книга",
@@ -131,8 +129,9 @@ function genTable(arr) {
 
 
 function sortTable(e) {
-	let clickTh = e.target.dataset.col;
-	for (let i of sortByParam(clickTh,goods)) {
+    let clickTh = e.target.dataset.col;
+    let srtbyparam = sortByParam(clickTh,goods);
+	for (let i of srtbyparam) {
 		document.getElementById('table').lastChild.remove();
 		for (let obj of goods) {
 			let row = tbl.insertRow();
@@ -158,12 +157,9 @@ for (let a of document.getElementsByTagName("th")) {
 
 let checkbox = document.querySelector("div:last-child input[type=checkbox]");
 checkbox.addEventListener("change", function() {
-    if (this.checked) {
-        document.querySelector("div:last-child input[type=checkbox]").parentElement.parentElement.lastElementChild.disabled = false;
-    } else {
-        document.querySelector("div:last-child input[type=checkbox]").parentElement.parentElement.lastElementChild.disabled = true;
-    }  
+        document.querySelector("div:last-child input[type=checkbox]").parentElement.parentElement.lastElementChild.disabled = !this.checked;
 });
+
 
 
 
